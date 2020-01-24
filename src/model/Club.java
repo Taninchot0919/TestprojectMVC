@@ -3,37 +3,49 @@ package model;
 import java.util.Scanner;
 
 public class Club {
-    private Club[] club;
-    private String fullName;
-    private String shortName;
-    private int count;
+    private String fullClubName;
+    private String shorClubName;
+    private int Clubmember;
     
+    Club c1 = new Club();
     final Scanner sc = new Scanner(System.in);
 
-    public Club[] getClub() {
-        return club;
+    public String getFullClubName() {
+        return fullClubName;
     }
 
-    public void setClub(Club[] club) {
-        this.club = club;
+    public void setFullClubName(String fullClubName) {
+        this.fullClubName = fullClubName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getShorClubtName() {
+        return shorClubName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setShorClubtName(String shorClubtName) {
+        this.shorClubName = shorClubtName;
     }
 
-    public String getShortName() {
-        return shortName;
+    public int getClubmember() {
+        return Clubmember;
     }
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
+    public void setClubmember(int Clubmember) {
+        this.Clubmember = Clubmember;
     }
+
+
     
-    
+    public void newClub(){
+        System.out.println("Enter Full Club Name : ");
+        String fullClubName = sc.nextLine();
+        c1.setFullClubName(fullClubName);
+        System.out.println("Enter Short Club Name : ");
+        String shortClubName = sc.nextLine();
+        c1.setShorClubtName(shortClubName);
+        System.out.println("Enter Your Maximum Member : ");
+        int member = sc.nextInt();
+        c1.setClubmember(member);
+    }
     
 }

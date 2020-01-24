@@ -5,6 +5,8 @@
  */
 package view;
 
+import controller.ClubCon;
+import controller.StudentCon;
 import java.util.Scanner;
 
 /**
@@ -12,14 +14,18 @@ import java.util.Scanner;
  * @author taninchot
  */
 public class Menu {
-    Scanner sc = new Scanner(System.in);
+    final Scanner sc = new Scanner(System.in);
+    final StudentCon stc1 = new StudentCon();
+    final ClubCon cc1 = new ClubCon();
     public static void main(String[] args) {
         Menu m1 = new Menu();
+
         int choice = 0;
         do{
             choice = m1.menu();
             switch(choice){
                 case 1:
+                    m1.setFullName();
                     break;
                 case 2:
                     break;
@@ -47,5 +53,10 @@ public class Menu {
         System.out.print("Enter Your Menu [1-6] : ");
         int selected = sc.nextInt();
         return selected;
+    }
+    
+    public void setFullName(){
+        String fullName = sc.nextLine();
+        stc1.setStudentName(fullName);
     }
 }

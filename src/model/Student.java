@@ -5,8 +5,11 @@ public class Student {
     private String fullName;
     private String lastName;
     private String faculty;
+    private Student[] member;
+    private int count;
 
     public Student() {
+        member= new Student[1];
     }
 
     public String getFullName() {
@@ -32,5 +35,10 @@ public class Student {
     public void setId(long id) {
         this.id = id;
     }
+    
+    public void setMember(int number){
+        member = new Student[number];
+    }
+    
 
 }
